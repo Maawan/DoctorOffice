@@ -90,12 +90,7 @@ private:
      * 
      * Postcondition: Returns true if a patient has arrived.
      */
-    void displayData(){
-        std::cout << "Simulation Time " << this->sim_time << " Number of doctors " << this->num_doctors
-        << " Appointment Time -> " << this->appointment_time << "  Time between Arrivals " << this->time_between_arrival 
-        << "Patients Arrived  -> " << this->patients_arrived << " Total Waiting time " << this->total_wait_time<<std::endl;
-    }
-
+    
     bool has_patient_arrived(double time_between_arrival)
     {
         double value = rand() / (double)RAND_MAX;

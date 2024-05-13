@@ -80,8 +80,6 @@ int main(int argc, char *argv[])
         int time_between_arrival = std::atoi(argv[5]);
 
         std::srand(seed); // random seed, for reproducibility
-        std::cout << "Seed time " << seed << "\n Sim Time " << sim_time << "\n num of doctors " << num_doctors
-        << "\n  Appointment time -> " << appointment_time << "\n time_between_arrival " << time_between_arrival << std::endl;
         simulation sim(sim_time, num_doctors, appointment_time, time_between_arrival);
         sim.run_simulation();
         generate_statistics(sim);

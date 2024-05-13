@@ -16,7 +16,7 @@ doctors_office::~doctors_office() {}
 int doctors_office::get_free_doctor_ID() const {
     for (int i = 0; i < doctors.size(); ++i) {
         if (doctors[i].is_free()) {
-            return i + 1; // doctor numbers are 1-indexed
+            return i; // doctor numbers are 1-indexed
         }
     }
     return -1; // No free doctor found
@@ -35,16 +35,16 @@ int doctors_office::get_number_of_busy_doctors() const {
 
 // Set a doctor as busy with the specified patient implementation
 void doctors_office::set_doctor_busy(int doc_ID, const patient& pat, int app_time) {
-    doctors[doc_ID - 1].set_busy();
-    doctors[doc_ID - 1].set_remaining_appointment_time(app_time);
-    doctors[doc_ID - 1].set_current_patient(pat);
+    doctors[doc_ID].set_busy();
+    doctors[doc_ID].set_remaining_appointment_time(app_time);
+    doctors[doc_ID].set_current_patient(pat);
 }
 
 // Set a doctor as busy with the specified patient implementation
 void doctors_office::set_doctor_busy(int doc_ID, const patient& pat) {
-    doctors[doc_ID - 1].set_busy();
-    doctors[doc_ID - 1].set_remaining_appointment_time();
-    doctors[doc_ID - 1].set_current_patient(pat);
+    doctors[doc_ID].set_busy();
+    doctors[doc_ID].set_remaining_appointment_time();
+    doctors[doc_ID].set_current_patient(pat);
 }
 
 // Update the status of doctors, checking if they have become free implementation
