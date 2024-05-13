@@ -24,25 +24,31 @@ void simulation::run_simulation() {
 
         if (!waiting_queue.empty()) {
             LQueue<patient> temp_queue = waiting_queue; // Create a temporary queue to iterate over
-            LQueue<patient> temp1 = waiting_queue;
-            LQueue<patient> temp2 = waiting_queue;
+            while(!waiting_queue.empty()){
+                waiting_queue.front().increment_waiting_time();
+                temp_queue.enqueue(waiting_queue.dequeue());
+            }
+            while(!temp_queue.empty()){
+                waiting_queue.enqueue(temp_queue.dequeue());
+            }
 
-            std::cout << "Before " << std::endl;
-            while (!temp1.empty()) {
-                std :: cout <<"Waiting time " << temp1.dequeue().get_waiting_time();
-                // Increment waiting time of each patient
-            }
-            std::cout<<std::endl;
-            while (!temp_queue.empty()) {
-                temp_queue.dequeue().increment_waiting_time();
-                // Increment waiting time of each patient
-            }
-            std::cout<<std::endl;
-            while (!temp2.empty()) {
-                std :: cout <<"Waiting time " << temp2.dequeue().get_waiting_time();
-                // Increment waiting time of each patient
-            }
-            std::cout<<std::endl;
+            // std::cout << "Before " << std::endl;
+            // while (!temp1.empty()) {
+            //     std :: cout <<"Waiting time " << temp1.dequeue().get_waiting_time();
+            //     // Increment waiting time of each patient
+            // }
+            // std::cout<<std::endl;
+            // while (!temp_queue.empty()) {
+            //     temp_queue.dequeue().increment_waiting_time();
+            //     // Increment waiting time of each patient
+            // }
+            // std::cout<<std::endl;
+            // while (!temp2.empty()) {
+            //     std :: cout <<"Waiting time " << temp2.dequeue().get_waiting_time();
+            //     // Increment waiting time of each patient
+            // }
+            // std::cout<<std::endl;
+
         }
 
         if (has_patient_arrived(time_between_arrival)) {
