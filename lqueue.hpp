@@ -21,7 +21,7 @@ void LQueue<T>::enqueue(const T &data) {
     std::cout<< "Element inserting ";
     list->push_back(data);
     count++;
-    std:cout << "Insertion Complete";
+    std::cout << "Insertion Complete";
 }
 
 template<typename T>
