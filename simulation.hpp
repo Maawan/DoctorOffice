@@ -1,9 +1,8 @@
-// #ifndef SIMULATION_HPP
-// #define SIMULATION_HPP
+#ifndef SIMULATION_HPP
+#define SIMULATION_HPP
 
 #include "simulation.h"
 #include<iostream>
-#include<queue>
 using namespace std;
 // Constructor implementation
 simulation::simulation(int sim_time, int num_doctors, int appointment_time, int time_between_arrival){
@@ -55,7 +54,7 @@ doctors_office& simulation::get_office() {
 }
 
 // Return a reference to the patient queue used in the simulation implementation
-queue<patient>& simulation::get_patient_queue() {
+LQueue<patient>& simulation::get_patient_queue() {
     return waiting_queue;
 }
 
@@ -69,4 +68,4 @@ int simulation::get_num_patients_arrived() {
     return patients_arrived;
 }
 
-// #endif
+#endif

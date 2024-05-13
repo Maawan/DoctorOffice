@@ -7,12 +7,11 @@
  * This file should be used in conjunction with Assignment 2 for SENG1120/SENG6120.
  */
 
-// #ifndef SENG1120_SIMULATION_H
-// #define SENG1120_SIMULATION_H
+#ifndef SENG1120_SIMULATION_H
+#define SENG1120_SIMULATION_H
 
 #include <iostream>
 #include <random>
-#include<queue>
 #include "doctors_office.h"
 #include "patient.h"
 #include "lqueue.h"
@@ -56,7 +55,7 @@ public:
      * 
      * Postcondition: A reference to the patient queue is returned.
      */
-    queue<patient>& get_patient_queue();
+    LQueue<patient>& get_patient_queue();
 
     /**
      * Return the total time patients spent waiting during the simulation.
@@ -81,7 +80,7 @@ private:
     int patients_arrived;     // The number of patients that have arrived
     int total_wait_time;      // The total wait time of all patients 
 
-    queue<patient> waiting_queue;   // The queue of patients waiting to be seen
+    LQueue<patient> waiting_queue;   // The queue of patients waiting to be seen
     doctors_office office;           // The doctor's office, containing the doctors
 
     /**
@@ -129,4 +128,4 @@ private:
     }
 };
 #include "simulation.hpp"
-// #endif
+#endif
