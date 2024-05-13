@@ -33,7 +33,9 @@ void simulation::run_simulation() {
         if (has_patient_arrived(time_between_arrival)) {
             int patient_number = patients_arrived++;
             display_patient_arrived(patient_number, time);
-            waiting_queue.enqueue(patient(patient_number, time, 0, appointment_time)); // Enqueue the arrived patient
+            patient temp =  patient(patient_number, time, 0, appointment_time);
+            std::cout << temp.get_patient_number() << "Patient Number" << std:: endl;
+            waiting_queue.enqueue(temp); // Enqueue the arrived patient
         }
 
         int free_doctor_number = office.get_free_doctor_ID();
