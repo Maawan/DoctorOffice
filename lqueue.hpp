@@ -18,16 +18,16 @@ LQueue<T>::~LQueue() {
 
 template<typename T>
 void LQueue<T>::enqueue(const T &data) {
-    list->push_back(data);
+    list.push_back(data);
     count++;
 }
 
 template<typename T>
 T LQueue<T>::dequeue() {
-    if (list->empty()) {
+    if (list.empty()) {
         throw empty_collection_exception();
     }
-    T frontData = list->front();
+    T frontData = list.front();
     list->pop_front();
     count--;
     return frontData;
@@ -35,7 +35,7 @@ T LQueue<T>::dequeue() {
 
 template<typename T>
 T &LQueue<T>::front() {
-    if (list->empty()) {
+    if (list.empty()) {
         throw empty_collection_exception();
     }
     return list->front();
