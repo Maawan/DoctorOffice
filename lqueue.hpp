@@ -13,7 +13,7 @@ LQueue<T>::LQueue() {
 
 template<typename T>
 LQueue<T>::~LQueue() {
-    delete list;
+    //delete list;
 }
 
 template<typename T>
