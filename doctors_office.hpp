@@ -14,7 +14,7 @@ doctors_office::~doctors_office() {}
 
 // Search the list of doctors for the first free doctor implementation
 int doctors_office::get_free_doctor_ID() const {
-    for (int i = 0; i < doctors.size(); ++i) {
+    for (long unsigned int i = 0; i < doctors.size(); ++i) {
         if (doctors[i].is_free()) {
             return i; // doctor numbers are 1-indexed
         }
