@@ -17,7 +17,7 @@ simulation::simulation(int sim_time, int num_doctors, int appointment_time, int 
 
 // Destructor implementation
 simulation::~simulation() {
-    delete &office;
+    
 }
 
 // Run the simulation implementation
