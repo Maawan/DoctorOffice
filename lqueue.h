@@ -72,7 +72,7 @@ public:
 	bool empty() const;
 
 private:
-    std::list<T> list;  // A pointer to the underlying list
+    std::list<T>* list;  // A pointer to the underlying list
     int count;           // The number of items in the queue
 };
 

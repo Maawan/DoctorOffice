@@ -24,14 +24,7 @@ void simulation::run_simulation() {
 
         if (!waiting_queue.empty()) {
             LQueue<patient> temp_queue = waiting_queue; // Create a temporary queue to iterate over
-            while(!waiting_queue.empty()){
-                waiting_queue.front().increment_waiting_time();
-                temp_queue.enqueue(waiting_queue.dequeue());
-            }
-            while(!temp_queue.empty()){
-                waiting_queue.enqueue(temp_queue.dequeue());
-            }
-
+            
             // std::cout << "Before " << std::endl;
             // while (!temp1.empty()) {
             //     std :: cout <<"Waiting time " << temp1.dequeue().get_waiting_time();
@@ -63,7 +56,7 @@ void simulation::run_simulation() {
         if (free_doctor_number != -1 && !waiting_queue.empty()) {
             patient next_patient = waiting_queue.dequeue();
              // Dequeue the patient
-            total_wait_time += next_patient.get_waiting_time();
+            total_wait_time += next_patient.get();
             office.set_doctor_busy(free_doctor_number, next_patient, appointment_time);
             display_patient_seen(free_doctor_number, next_patient.get_patient_number(), time);
         }
