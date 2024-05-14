@@ -12,6 +12,7 @@ simulation::simulation(int sim_time, int num_doctors, int appointment_time, int 
     this->time_between_arrival = time_between_arrival;
     this->patients_arrived = 0;
     this->total_wait_time = 0;
+    std::cout << "Num of Doc" << this->num_doctors;
 }
 
 // Destructor implementation
@@ -31,7 +32,6 @@ void simulation::run_simulation() {
             }
             while(!temp_queue.empty()){
                 waiting_queue.enqueue(temp_queue.dequeue());
-
             }
             
 
