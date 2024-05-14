@@ -26,7 +26,7 @@ void LQueue<T>::enqueue(const T &data) {
 
 template<typename T>
 T LQueue<T>::dequeue() {
-    if (list.empty()) {
+    if (list->empty()) {
         throw empty_collection_exception();
     }
     T frontData = list->front();
