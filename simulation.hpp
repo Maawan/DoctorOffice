@@ -13,11 +13,12 @@ simulation::simulation(int sim_time, int num_doctors, int appointment_time, int 
     this->patients_arrived = 0;
     this->total_wait_time = 0;
     this->office = doctors_office(this->num_doctors);
-    std::cout << "Num of Doc" << this->num_doctors;
 }
 
 // Destructor implementation
-simulation::~simulation() {}
+simulation::~simulation() {
+    delete &office;
+}
 
 // Run the simulation implementation
 void simulation::run_simulation() {
