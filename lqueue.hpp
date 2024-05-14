@@ -7,7 +7,7 @@
 #include<iostream>
 template<typename T>
 LQueue<T>::LQueue() {
-    list = new std:list<T>();
+    list = new std::list<T>();
     count = 0;
 }
 
@@ -27,7 +27,7 @@ T LQueue<T>::dequeue() {
     if (list->empty()) {
         throw empty_collection_exception();
     }
-    T frontData = list.front();
+    T frontData = list->front();
     list->pop_front();
     count--;
     return frontData;
