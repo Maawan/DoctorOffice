@@ -120,5 +120,5 @@ private:
 	bool is_busy;                   // The status of the doctor. is_busy is true if the doctor is busy and false if free
 	int remaining_appointment_time; // The remaining time for the current appointment
 };
-
+#include "doctor.hpp"
 #endif

@@ -4,7 +4,7 @@
 #define SENG1120_LQUEUE_HPP
 
 #include "lqueue.h"
-#include<iostream>
+
 template<typename T>
 LQueue<T>::LQueue() {
     list = new std::list<T>();
