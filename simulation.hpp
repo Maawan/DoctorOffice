@@ -24,23 +24,16 @@ void simulation::run_simulation() {
 
         if (!waiting_queue.empty()) {
             LQueue<patient> temp_queue = waiting_queue; // Create a temporary queue to iterate over
+            while(!waiting_queue.empty()){
+                patient p = waiting_queue.dequeue();
+                p.increment_waiting_time();
+                temp_queue.enqueue(p);
+            }
+            while(!temp_queue.empty()){
+                waiting_queue.enqueue(temp_queue.dequeue());
+
+            }
             
-            // std::cout << "Before " << std::endl;
-            // while (!temp1.empty()) {
-            //     std :: cout <<"Waiting time " << temp1.dequeue().get_waiting_time();
-            //     // Increment waiting time of each patient
-            // }
-            // std::cout<<std::endl;
-            // while (!temp_queue.empty()) {
-            //     temp_queue.dequeue().increment_waiting_time();
-            //     // Increment waiting time of each patient
-            // }
-            // std::cout<<std::endl;
-            // while (!temp2.empty()) {
-            //     std :: cout <<"Waiting time " << temp2.dequeue().get_waiting_time();
-            //     // Increment waiting time of each patient
-            // }
-            // std::cout<<std::endl;
 
         }
 
