@@ -14,7 +14,10 @@ simulation::simulation(int sim_time, int num_doctors, int appointment_time, int 
     this->office = doctors_office(this->num_doctors);
 }
 
-
+// Destructor implementation
+simulation::~simulation() {
+    
+}
 
 // Run the simulation 
 void simulation::run_simulation() {

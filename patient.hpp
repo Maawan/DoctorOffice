@@ -8,7 +8,8 @@ patient::patient(int pat_num, int arrive_time, int wait_time, int app_length) {
     this->appointment_length = app_length;
     
 }
-
+// Destructor implementation
+patient::~patient() {}
 
 // Update patient information 
 void patient::set_patient_info(int pat_num, int arrive_time, int wait_time, int app_length) {

@@ -9,6 +9,10 @@ doctors_office::doctors_office(int num_docs) {
     doctors.resize(num_docs);
 }
 
+// Destructor implementation
+doctors_office::~doctors_office() {
+    
+}
 
 // Search free doctor and returning its index (Doctor ID)
 int doctors_office::get_free_doctor_ID() const {
