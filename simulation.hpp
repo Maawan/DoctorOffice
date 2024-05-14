@@ -23,7 +23,7 @@ void simulation::run_simulation() {
         office.update_doctors(time);
 
         if (!waiting_queue.empty()) {
-            LQueue<patient> temp_queue = waiting_queue; // Create a temporary queue to iterate over
+            LQueue<patient> temp_queue; // Create a temporary queue to iterate over
             while(!waiting_queue.empty()){
                 patient p = waiting_queue.dequeue();
                 p.increment_waiting_time();
