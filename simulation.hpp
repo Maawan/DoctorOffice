@@ -12,6 +12,7 @@ simulation::simulation(int sim_time, int num_doctors, int appointment_time, int 
     this->time_between_arrival = time_between_arrival;
     this->patients_arrived = 0;
     this->total_wait_time = 0;
+    this->office = doctors_office(this->num_doctors);
     std::cout << "Num of Doc" << this->num_doctors;
 }
 
