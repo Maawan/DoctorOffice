@@ -56,7 +56,7 @@ void simulation::run_simulation() {
         if (free_doctor_number != -1 && !waiting_queue.empty()) {
             patient next_patient = waiting_queue.dequeue();
              // Dequeue the patient
-            total_wait_time += next_patient.get();
+            total_wait_time += next_patient.get_waiting_time();
             office.set_doctor_busy(free_doctor_number, next_patient, appointment_time);
             display_patient_seen(free_doctor_number, next_patient.get_patient_number(), time);
         }

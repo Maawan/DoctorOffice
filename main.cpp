@@ -30,7 +30,7 @@ void generate_statistics(simulation &sim)
     while (!patient_queue.empty())
     {
         pat = patient_queue.dequeue();
-        total_wait_time = total_wait_time + pat.get_();
+        total_wait_time = total_wait_time + pat.get_waiting_time();
         patients_in_queue++;
     }
 
