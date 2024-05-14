@@ -121,5 +121,4 @@ private:
 	int remaining_appointment_time; // The remaining time for the current appointment
 };
 #include "doctor.hpp"
-
 #endif

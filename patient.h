@@ -83,7 +83,5 @@ private:
 	int waiting_time;        // The time spent waiting
 	int appointment_length;  // The appointment length 
 };
-
 #include "patient.hpp"
-
 #endif

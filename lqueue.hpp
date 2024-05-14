@@ -7,37 +7,38 @@
 #include<iostream>
 template<typename T>
 LQueue<T>::LQueue() {
+    list = new std:list<T>();
     count = 0;
 }
 
 template<typename T>
 LQueue<T>::~LQueue() {
-    
+    delete list;
 }
 
 template<typename T>
 void LQueue<T>::enqueue(const T &data) {
-    list.push_back(data);
+    list->push_back(data);
     count++;
 }
 
 template<typename T>
 T LQueue<T>::dequeue() {
-    if (list.empty()) {
+    if (list->empty()) {
         throw empty_collection_exception();
     }
     T frontData = list.front();
-    list.pop_front();
+    list->pop_front();
     count--;
     return frontData;
 }
 
 template<typename T>
 T &LQueue<T>::front() {
-    if (list.empty()) {
+    if (list->empty()) {
         throw empty_collection_exception();
     }
-    return list.front();
+    return list->front();
 }
 
 template<typename T>

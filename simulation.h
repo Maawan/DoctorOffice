@@ -28,7 +28,7 @@ public:
      *                The patients_arrived is set to 0.
      */
     simulation(int sim_time, int num_doctors, int appointment_time, int time_between_arrival);
-        
+
     /**
      * Destructor for a simulation.
      * 
@@ -90,7 +90,6 @@ private:
      * 
      * Postcondition: Returns true if a patient has arrived.
      */
-    
     bool has_patient_arrived(double time_between_arrival)
     {
         double value = rand() / (double)RAND_MAX;
