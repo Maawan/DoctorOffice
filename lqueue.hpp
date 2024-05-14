@@ -37,7 +37,7 @@ T LQueue<T>::dequeue() {
 
 template<typename T>
 T &LQueue<T>::front() {
-    if (list.empty()) {
+    if (list->empty()) {
         throw empty_collection_exception();
     }
     return list->front();
